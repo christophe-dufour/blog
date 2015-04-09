@@ -1,0 +1,5 @@
+- @posts.each do |post|
+  h2 = post.title
+  == link_to post.body, post
+
+== paginate @posts
