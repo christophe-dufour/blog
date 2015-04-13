@@ -1,0 +1,1 @@
+Rails.application.config.angular_templates.htmlcompressor = true

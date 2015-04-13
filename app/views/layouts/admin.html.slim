@@ -1,0 +1,9 @@
+doctype html
+html ng-app='blog'
+  head
+    == metamagic title: 'Admin', viewport: 'width=device-width, initial-scale=1.0'
+    == stylesheet_link_tag 'admin', :media => 'all'
+  body
+    main[role="main" ng-view]
+      == yield
+    == javascript_include_tag 'admin'

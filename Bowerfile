@@ -1,0 +1,4 @@
+asset 'angular'
+asset 'angular-route'
+asset 'normalize.css'
+asset 'bootstrap-sass-official'

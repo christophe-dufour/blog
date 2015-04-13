@@ -1,12 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 gem 'rails', '4.2.0'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -16,6 +10,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'mongoid-rspec', '~> 2.1.0'
+  gem 'simplecov'
 end
 
 group :development do
@@ -43,12 +38,21 @@ group :production do
   gem 'rails_12factor'
 end
 
+#group :assets do
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'bower-rails'
+gem 'angular-rails-templates'
+gem 'htmlcompressor'
+#end
+
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'slim-rails'
 gem 'mongoid'
 gem 'metamagic'
-gem 'normalize-rails'
 gem 'kaminari'
 gem 'redcarpet'
 gem 'mongoid-slug'
+gem 'active_model_serializers'

@@ -33,3 +33,5 @@ bower.json
 .powenv
 
 .idea
+
+node_modules
