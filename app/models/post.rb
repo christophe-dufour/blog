@@ -1,6 +1,7 @@
 class Post
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Search
   include Mongoid::Slug
 
   embeds_many :comments
@@ -19,4 +20,6 @@ class Post
 
   default_scope -> { where(:published_at.ne => nil).order(published_at: :desc) }
   slug :title, :history => true
+
+  search_in :title, :tags
 end

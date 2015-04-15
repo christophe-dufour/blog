@@ -6,7 +6,7 @@ module Api
 
     def index
       if stale?(load_posts)
-        render json: @posts
+        render json: @posts, each_serializer: Index::PostSerializer
       end
     end
 
@@ -15,7 +15,7 @@ module Api
     end
 
     def create
-      if save_post
+      if @post.save
         render json: @post, status: 201
       else
         render json: @post.errors, status: :unprocessable_entity
@@ -32,12 +32,11 @@ module Api
     private
 
     def load_posts
-      @posts ||= Post.unscoped.order(updated_at: :desc).where(name: "/.*#{params[:keywords]}.*/").page params[:page] unless params[:keywords].blank?
-      @posts ||= Post.unscoped.order(updated_at: :desc).page params[:page]
+      @posts ||= Post.unscoped.full_text_search(params[:keywords]).order(updated_at: :desc).page params[:page]
     end
 
     def load_post
-      @post ||= Post.find(params[:id])
+      @post ||= Post.unscoped.find(params[:id])
     end
 
     def build_post
@@ -45,15 +44,9 @@ module Api
       @post.attributes = post_params
     end
 
-    def save_post
-      if @post.save
-        redirect_to @post
-      end
-    end
-
     def post_params
       post_params = params[:post]
-      post_params ? post_params.permit([:title, :text]) : {}
+      post_params ? post_params.permit([:title, :body]) : {}
     end
 
     def wrap_in_stale

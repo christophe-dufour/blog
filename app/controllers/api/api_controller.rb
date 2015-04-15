@@ -10,6 +10,10 @@ module Api
       {root: false}
     end
 
+
+    rescue_from Mongoid::Errors::DocumentNotFound do |e|
+      render nothing: true, status: 404
+    end
     private
 
     def check_logged_in

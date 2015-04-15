@@ -5,7 +5,7 @@ Rails.application.config.middleware.use HtmlCompressor::Rack, {
                                                                 :remove_intertag_spaces => false,
                                                                 :remove_quotes => false,
                                                                 :compress_css => true,
-                                                                :compress_javascript => true,
+                                                                :compress_javascript => false,
                                                                 :simple_doctype => false,
                                                                 :remove_script_attributes => false,
                                                                 :remove_style_attributes => false,

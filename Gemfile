@@ -1,6 +1,36 @@
 source 'https://rubygems.org'
 ruby '2.2.1'
 gem 'rails', '4.2.0'
+
+
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'angular-rails-templates'
+gem 'htmlcompressor'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'slim-rails'
+gem 'mongoid'
+gem 'mongoid_search'
+gem 'metamagic'
+gem 'kaminari'
+gem 'redcarpet'
+gem 'mongoid-slug'
+gem 'active_model_serializers'
+
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap-sass-official'
+  gem 'rails-assets-angular'
+  gem 'rails-assets-angular-route'
+  gem 'rails-assets-angular-resource'
+  gem 'rails-assets-angular-mocks'
+  gem 'rails-assets-angular-flash'
+  gem 'rails-assets-normalize.css'
+end
+
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -11,7 +41,15 @@ group :development, :test do
   gem 'rubocop'
   gem 'mongoid-rspec', '~> 2.1.0'
   gem 'simplecov'
+  gem 'teaspoon'
+
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'phantomjs'
 end
+
 
 group :development do
   gem 'better_errors'
@@ -19,40 +57,20 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'guard-teaspoon'
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'rb-fchange', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-inotify', :require => false
   gem 'spring-commands-rspec'
+  gem 'spring-commands-teaspoon'
 end
 
 group :test do
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'launchy'
-  gem 'selenium-webdriver'
+
 end
 
 group :production do
   gem 'rails_12factor'
 end
-
-#group :assets do
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'bower-rails'
-gem 'angular-rails-templates'
-gem 'htmlcompressor'
-#end
-
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-gem 'slim-rails'
-gem 'mongoid'
-gem 'metamagic'
-gem 'kaminari'
-gem 'redcarpet'
-gem 'mongoid-slug'
-gem 'active_model_serializers'

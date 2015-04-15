@@ -14,11 +14,13 @@
     </form>
 </section>
 <hr>
-<section class="row" ng-if="recipes">
+<section class="row" ng-if="posts">
     <ul class="list-unstyled">
-        <li ng-repeat="recipe in recipes">
+        <li ng-repeat="post in posts">
             <section class="well col-md-6 col-md-offset-3">
-                <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">{{recipe.name}}</a></h1>
+                <h1 class="h3 col-md-6 text-right" style="margin-top: 0">
+                    <a href ng-click="view(post.id)">{{post.title}}</a>
+                </h1>
 
                 <div class="col-md-6">
                     <button class="btn btn-info">Edit</button>
