@@ -1,5 +1,3 @@
-"use strict";
-
 app = angular.module('blog', [
   'templates',
   'ngRoute',

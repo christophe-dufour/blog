@@ -1,6 +1,3 @@
-"use strict";
-
-
 angular.module('PostController', []).controller("PostController",
   ($scope, $routeParams, $resource, $location, flash)->
     Post = $resource('/api/posts/:id', {id: "@id"}, {
