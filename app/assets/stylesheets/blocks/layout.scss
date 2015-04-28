@@ -1,0 +1,22 @@
+@import "abstract/bootstrap";
+@import "common";
+
+.layout {
+  @extend %row
+}
+
+.layout__main {
+  @extend %col-sm-9;
+  @extend %col-lg-8;
+  @media (min-width: $screen-sm-min) {
+    border-right: $border;
+  }
+  padding: 0;
+
+}
+
+.layout__side {
+  @extend %col-sm-3;
+  @extend %col-lg-4;
+  padding-top: 1rem;
+}

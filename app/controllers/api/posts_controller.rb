@@ -1,6 +1,6 @@
 module Api
   class PostsController < ApiController
-    before_action :load_post, only: [:update, :destroy]
+    before_action :load_post, only: [:update, :destroy, :publish, :unpublish]
     around_action :wrap_in_stale, only: [:show, :edit]
     before_action :build_post, only: [:create, :update]
 
@@ -20,6 +20,16 @@ module Api
       else
         render json: @post.errors, status: :unprocessable_entity
       end
+    end
+
+    def publish
+      @post.published_at=Time.now
+      update()
+    end
+
+    def unpublish
+      @post.published_at=nil
+      update()
     end
 
     alias :update :create
@@ -46,7 +56,7 @@ module Api
 
     def post_params
       post_params = params[:post]
-      post_params ? post_params.permit([:title, :body]) : {}
+      post_params ? post_params.permit([:title, :body, :tags, :preview_url, :meta]) : {}
     end
 
     def wrap_in_stale

@@ -11,7 +11,22 @@
  * file per style scope.
  *
  *
+ *= require_tree ./abstract-bootstrap
+ *= require_tree ./blocks
+ *= require abstract-bootstrap/_normalize
  *= require_self
- *= require normalize.css/normalize
- *= require_tree .
  */
+@import "abstract/bootstrap";
+@import "common";
+
+html {
+  background-color: white;
+}
+
+body {
+  @extend %container;
+  border: $border;
+  @media (min-width: $screen-sm-min) {
+    margin: 2rem auto;
+  }
+}

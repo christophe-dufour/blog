@@ -18,7 +18,7 @@ gem 'kaminari'
 gem 'redcarpet'
 gem 'mongoid-slug'
 gem 'active_model_serializers'
-
+gem 'albino'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-sass-official'
@@ -27,6 +27,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-resource'
   gem 'rails-assets-angular-mocks'
   gem 'rails-assets-angular-flash'
+  gem 'rails-assets-angular-sanitize'
   gem 'rails-assets-normalize.css'
 end
 

@@ -11,8 +11,11 @@ class Post
   field :published_at, type: DateTime
   field :tags, type: Array
   field :meta, type: Hash
+  field :preview_url, type: String
 
   validates_presence_of :title
+
+  validates_presence_of :body, :preview_url, if: :published_at
 
   index({title: 1}, {unique: true})
 

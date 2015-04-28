@@ -15,5 +15,6 @@
 //= require angular-rails-templates
 //= require angular-resource/angular-resource
 //= require angular-flash
+//= require angular-sanitize
 //= require_tree ./templates
 //= require_tree ./admin

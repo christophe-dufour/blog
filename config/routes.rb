@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
 
   namespace :api, format: 'json' do
-    resources :posts, as: :post_api
+    resources :posts, as: :post_api do
+      member do
+        post :publish, to: :publish
+        delete :publish, to: :unpublish
+      end
+    end
   end
 
 

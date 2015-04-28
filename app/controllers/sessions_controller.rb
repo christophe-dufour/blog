@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
 
+
+  def index
+
+  end
+
   def new
     redirect_to '/auth/google_oauth2'
   end

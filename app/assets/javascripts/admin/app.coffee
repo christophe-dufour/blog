@@ -4,12 +4,14 @@ app = angular.module('blog', [
   'templates',
   'ngRoute',
   'ngResource',
-  'controllers',
+  'ngSanitize',
+  'PostController',
+  'PostsController',
   'angular-flash.service',
   'angular-flash.flash-alert-directive'
 ])
 
-app.config(['$routeProvider', 'flashProvider',
+app.config(
   ($routeProvider, flashProvider)->
     flashProvider.errorClassnames.push("alert-danger")
     flashProvider.warnClassnames.push("alert-warning")
@@ -20,9 +22,14 @@ app.config(['$routeProvider', 'flashProvider',
     .when('/',
       templateUrl: "index.html"
       controller: 'PostsController'
-    )
-    .when('/posts/:id',
+    ).when('/posts/new',
+      templateUrl: "posts/form.html"
+      controller: 'PostController'
+    ).when('/posts/:id',
       templateUrl: "posts/show.html"
       controller: 'PostController'
+    ).when('/posts/:id/edit',
+      templateUrl: "posts/form.html"
+      controller: 'PostController'
     )
-])
+)

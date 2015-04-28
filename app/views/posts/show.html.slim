@@ -1,2 +1,14 @@
-h1 = @post.title
-== markdown.render @post.body
+.post
+  h1[class='post__title'] = @post.title
+  .post__date
+    = l(@post.published_at)
+  .post__author
+    | by&nbsp;
+    == link_to 'Christophe Dufour', root_path
+  .post__tags
+    = @post.tags
+  .post__body
+    == markdown.render @post.body
+  .post__social
+  .post__go_back
+  .post__comment

@@ -1,0 +1,46 @@
+@import "common";
+
+.post-preview {
+  padding: 1rem 3rem 1rem 3rem;
+  border-bottom: $border;
+}
+
+.post-preview__title {
+  color: $text-color;
+  *, *:hover, *:visited {
+    color: $text-color;
+  }
+}
+
+.post-preview__picture {
+  img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+}
+
+.post-preview__author {
+  display: inline-block;
+}
+
+.post-preview__tags {
+  display: inline-block;
+}
+
+.post-preview__date {
+  display: inline-block;
+  text-align: right;
+  float: right;
+}
+
+.post-preview__truncate {
+  clear: both;
+  padding: 1rem 0;
+}
+
+.post-preview__read-more {
+  text-align: right;
+}

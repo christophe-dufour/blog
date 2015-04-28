@@ -1,5 +1,22 @@
-- @posts.each do |post|
-  h2 = post.title
-  == link_to post.body, post
+.layout__main
+  - @posts.each do |post|
+    .post-preview
+      h1[class='post-preview__title'] == link_to post.title, post
+      .post-preview__picture
+        == link_to post do
+          == image_tag post.preview_url, alt: post.title
+        end
+      .post-preview__date
+        = l(post.published_at)
+      .post-preview__author
+        | by&nbsp;
+        == link_to 'Christophe Dufour', root_path
+      .post-preview__tags
+        = post.tags
+      .post-preview__truncate
+        == truncate_post(post)
+      .post-preview__read-more
+        == link_to 'Read more ➔', post
+  == paginate @posts
 
-== paginate @posts
+== render 'side'
