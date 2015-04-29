@@ -8,6 +8,7 @@ feature 'Looking up posts', js: true do
     FactoryGirl.create(:post, title: 'Baked Brussel Sprouts')
   end
   scenario 'finding posts' do
+    page.set_rack_session(:admin => :ok)
     visit '/admin'
     fill_in 'keywords', with: 'baked'
     click_on 'Search'

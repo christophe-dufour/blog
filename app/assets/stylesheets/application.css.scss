@@ -25,7 +25,7 @@ html {
 
 body {
   @extend %container;
-  border: $border;
+  box-shadow: 1px 1px 2px 1px #d0d0d0;
   @media (min-width: $screen-sm-min) {
     margin: 2rem auto;
   }

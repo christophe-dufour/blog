@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe Api::PostsController, :type => :controller do
+  before { request.session[:admin] = :ok }
   describe "index" do
     before do
       FactoryGirl.create(:post, title: 'Baked Potato w/ Cheese')

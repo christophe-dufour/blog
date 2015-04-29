@@ -16,5 +16,6 @@
 //= require angular-resource/angular-resource
 //= require angular-flash
 //= require angular-sanitize
+//= require ng-s3upload.js
 //= require_tree ./templates
 //= require_tree ./admin

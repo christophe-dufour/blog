@@ -6,7 +6,8 @@ app = angular.module('blog', [
   'PostController',
   'PostsController',
   'angular-flash.service',
-  'angular-flash.flash-alert-directive'
+  'angular-flash.flash-alert-directive',
+  'ngS3upload'
 ])
 
 app.config(

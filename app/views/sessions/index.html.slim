@@ -1,0 +1,4 @@
+- flash.each do |name, msg|
+  - if msg.is_a?(String)
+    == content_tag :div, msg, :id => "flash_#{name}"
+== link_to "Sign in", signin_path

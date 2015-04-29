@@ -5,6 +5,11 @@
   @extend %row
 }
 
+.layout__top {
+  width: 100%;
+  height: auto;
+}
+
 .layout__main {
   @extend %col-sm-9;
   @extend %col-lg-8;

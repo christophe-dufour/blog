@@ -6,6 +6,7 @@ feature 'Show a post', js: true do
     FactoryGirl.create(:post, title: 'Baked Brussel Sprouts', body: 'the second body')
   end
   scenario 'finding posts' do
+    page.set_rack_session(:admin => :ok)
     visit '/admin'
     click_on "Baked Brussel Sprouts"
 

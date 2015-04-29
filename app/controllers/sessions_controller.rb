@@ -11,20 +11,23 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    user = User.where(:provider => auth['provider'],
-                      :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
+
     reset_session
-    session[:user_id] = user.id
-    redirect_to root_url, :notice => 'Signed in!'
+    if auth.info.email == Rails.application.secrets.admin_email
+      session[:admin] = auth.info.email
+      redirect_to admin_url, :notice => 'Signed in!'
+    else
+      redirect_to admin_url, :alert => "Authentication error: not good account"
+    end
   end
 
   def destroy
     reset_session
-    redirect_to root_url, :notice => 'Signed out!'
+    redirect_to admin_url, :notice => 'Signed out!'
   end
 
   def failure
-    redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
+    redirect_to admin_url, :alert => "Authentication error: #{params[:message].humanize}"
   end
 
 end

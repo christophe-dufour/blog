@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'angular-rails-templates'
 gem 'htmlcompressor'
+gem 'yui-compressor'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'slim-rails'
@@ -19,6 +20,8 @@ gem 'redcarpet'
 gem 'mongoid-slug'
 gem 'active_model_serializers'
 gem 'albino'
+gem 'ngannotate-rails'
+gem 'sucker_punch'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-sass-official'
@@ -28,6 +31,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-mocks'
   gem 'rails-assets-angular-flash'
   gem 'rails-assets-angular-sanitize'
+  gem 'rails-assets-ng-s3upload'
   gem 'rails-assets-normalize.css'
 end
 
@@ -43,12 +47,12 @@ group :development, :test do
   gem 'mongoid-rspec', '~> 2.1.0'
   gem 'simplecov'
   gem 'teaspoon'
-
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'phantomjs'
+  gem 'rack_session_access'
 end
 
 

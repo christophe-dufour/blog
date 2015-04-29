@@ -4,6 +4,10 @@ html ng-app='blog'
     == metamagic title: 'Admin', viewport: 'width=device-width, initial-scale=1.0'
     == stylesheet_link_tag 'admin', :media => 'all'
   body
+    navbar
+      .container
+        .pull-right
+          == link_to "Sign out", signout_path
     main[role="main" ng-view]
       == yield
     == javascript_include_tag 'admin'

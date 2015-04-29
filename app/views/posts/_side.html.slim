@@ -1,5 +1,16 @@
 .layout__side
+  .avatar
+    ==image_tag 'christophe-dufour.png', class: 'avatar__img'
   .newsletter
     h3[class='newsletter__title']= 'Newsletter'
+    form [action="//christophe-dufour.us10.list-manage.com/subscribe/post?u=75d20bbf17da96008d7dee451&amp;id=622b973a95" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter__form" target="_blank" novalidate]
+      input [type="email" value="" name="EMAIL" class="required email newsletter__email" id="mce-EMAIL"]
+      div [style="position: absolute; left: -5000px;"]
+        input [type="text" name="b_75d20bbf17da96008d7dee451_622b973a95" tabindex="-1" value=""]
+      button [type="submit" name="subscribe" id="mc-embedded-subscribe" class="button newsletter__button"]
+        span [class="glyphicon glyphicon-align-left" aria-hidden="true"] Submit
   .top-posts
     h3[class='top-post__title']= 'Top posts'
+    ol
+      - @top_posts.each do |post|
+        li == link_to post.title, post, class: 'top-post__post'

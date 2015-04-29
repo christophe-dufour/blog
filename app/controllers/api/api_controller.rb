@@ -3,9 +3,6 @@ module Api
 
     before_action :check_logged_in
 
-#    rescue_from CanCan::AccessDenied do |exception|
-#      render json: 'Not authorized', status: 401, formats: [:json]
-#    end
     def default_serializer_options
       {root: false}
     end
@@ -17,7 +14,7 @@ module Api
     private
 
     def check_logged_in
-      #TODO
+      render nothing: true, status: 403 unless session[:admin]
     end
   end
 end

@@ -12,6 +12,7 @@ class Post
   field :tags, type: Array
   field :meta, type: Hash
   field :preview_url, type: String
+  field :view, type: Integer
 
   validates_presence_of :title
 
