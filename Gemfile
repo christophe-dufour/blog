@@ -22,6 +22,7 @@ gem 'active_model_serializers'
 gem 'albino'
 gem 'ngannotate-rails', '~> 1.0.0'
 gem 'sucker_punch'
+gem 'asset_sync'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-sass-official'
