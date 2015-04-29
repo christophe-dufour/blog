@@ -20,7 +20,7 @@ gem 'redcarpet'
 gem 'mongoid-slug'
 gem 'active_model_serializers'
 gem 'albino'
-gem 'ngannotate-rails'
+gem 'ngannotate-rails', '~> 1.0.0'
 gem 'sucker_punch'
 
 source 'https://rails-assets.org' do
