@@ -136,6 +136,7 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    libv8 (3.16.14.7)
     listen (2.10.0)
       celluloid (~> 0.16.0)
       rb-fsevent (>= 0.9.3)
@@ -271,6 +272,7 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.2.3)
+    ref (1.0.5)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
       rspec-expectations (~> 3.2.0)
@@ -348,6 +350,9 @@ GEM
     teaspoon (0.9.1)
       railties (>= 3.2.5, < 5)
     temple (0.7.5)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -427,6 +432,7 @@ DEPENDENCIES
   spring-commands-teaspoon
   sucker_punch
   teaspoon
+  therubyracer
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   yui-compressor
