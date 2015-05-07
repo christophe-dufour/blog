@@ -25,10 +25,11 @@
     </label>
 
     <div class="col-md-5">
-      <div s3-upload bucket="activity_images" ng-model="post.preview_url"
-           s3-upload-options="{getOptionsUri: '<%= Rails.application.routes.url_helpers.s3_access_token_path %>', folder: 'images/'}">
-      </div>
+      <input type="text" name="title" class="form-control" placeholder="//example.com/myimage.png"
+             ng-required="true"
+             ng-model="post.preview_url">
     </div>
+  </div>
   </div>
   <div class="form-group" ng-class="{'has-warning has-feedback':errors.body}">
     <label

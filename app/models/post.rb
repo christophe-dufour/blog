@@ -22,6 +22,8 @@ class Post
 
   index({published_at: -1})
 
+  index({view: -1})
+
   default_scope -> { where(:published_at.ne => nil).order(published_at: :desc) }
   slug :title, :history => true
 

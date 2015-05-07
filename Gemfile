@@ -20,9 +20,9 @@ gem 'redcarpet'
 gem 'mongoid-slug'
 gem 'active_model_serializers'
 gem 'albino'
-gem 'ngannotate-rails', '~> 1.0.0'
+gem 'ngannotate-rails'
 gem 'sucker_punch'
-gem 'asset_sync'
+gem 'therubyracer', platforms: :ruby
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-sass-official'
@@ -53,7 +53,6 @@ group :development, :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'phantomjs'
-  gem 'rack_session_access'
 end
 
 
@@ -80,3 +79,4 @@ end
 group :production do
   gem 'rails_12factor'
 end
+
