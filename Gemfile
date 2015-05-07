@@ -53,6 +53,7 @@ group :development, :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'phantomjs'
+  gem 'rack_session_access'
 end
 
 
