@@ -22,6 +22,7 @@ gem 'active_model_serializers'
 gem 'albino'
 gem 'ngannotate-rails'
 gem 'sucker_punch'
+gem 'asset_sync'
 gem 'therubyracer', platforms: :ruby
 
 source 'https://rails-assets.org' do
