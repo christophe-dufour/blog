@@ -1,8 +1,4 @@
 module ApplicationHelper
-  if ENV['HOME'] == '/app'
-    require 'rubypython'
-    RubyPython.start(:python_exe => "python2.6")
-  end
   class HTMLwithPygments < Redcarpet::Render::HTML
     def block_code(code, language)
       Albino.colorize(code, language)
