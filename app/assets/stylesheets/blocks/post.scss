@@ -23,11 +23,8 @@
 .post__body {
   clear: both;
   margin-top: 3rem;
-  @media (min-width: 48em) {
-    font-size: 16px;
-  }
   @media (min-width: 58em) {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   /* Code */
